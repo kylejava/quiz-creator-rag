@@ -17,12 +17,12 @@ quiz-creator-rag/
 
 1. **Activate Virtual Environment**
    ```bash
-   venv\Scripts\activate.bat
+   venv\Scripts\activate
    ```
 
 2. **Install Dependencies**
    ```bash
-   pip install streamlit
+   pip install -r requirements.txt
    ```
 
 3. **Run the Application**
