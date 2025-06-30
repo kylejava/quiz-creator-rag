@@ -8,12 +8,11 @@ load_dotenv(dotenv_path)
 
 key = os.getenv("MISTRAL_API_KEY")
 
+#May Not Be Needed
 
-def get_embeddings(docs):
+def get_embeddings():
     
-    embeddings = MistralAIEmbeddings(
+    return MistralAIEmbeddings(
         model="mistral-embed",
         api_key=SecretStr(key)
     )
-
-    return embeddings.embed_documents(docs)

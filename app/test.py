@@ -21,7 +21,7 @@ def test_rag_pipeline():
         print(f"📊 Number of documents: {len(docs)}")
         print(f"📊 First document type: {type(docs[0]) if docs else 'No docs'}")
         if docs:
-            print(f"📊 First document content preview: {docs[0].page_content[:100]}...")
+            print(f"📊 First document content preview: {docs[50].page_content}...")
             print(f"📊 First document metadata: {docs[0].metadata}")
     except Exception as e:
         print(f"❌ Error loading documents: {e}")
@@ -31,13 +31,7 @@ def test_rag_pipeline():
     print("\n✂️ STEP 2: Text Splitting")
     print("-" * 30)
     try:
-        # Extract text content from all documents
-        all_text = ""
-        for doc in docs:
-            all_text += doc.page_content + "\n\n"
-        
-        print(f"📊 Total text length: {len(all_text)} characters")
-        chunks = split_text(all_text)
+        chunks = split_text(docs)
         print(f"✅ Text split successfully!")
         print(f"📊 Type: {type(chunks)}")
         print(f"📊 Number of chunks: {len(chunks)}")
