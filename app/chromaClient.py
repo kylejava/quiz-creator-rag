@@ -40,15 +40,8 @@ class ChromaClient:
             print("Collection created")
 
 
-    def get_documents(self):
-        # Get total count of docs
-        total_docs = self.client._collection.count()
-        
-        # Retrieve all documents by setting limit to total_docs
-        result = self.client.get(include=["documents", "metadatas"], limit=total_docs)
-        documents = result.get("documents", [])
-        return documents
-
+    def get_documents(self, query, k=10):
+        return self.client.similarity_search(query, k=k)
 
 
     def summarize_db(self):
@@ -76,8 +69,8 @@ class ChromaClient:
             template=prompt_template,
             input_variables=["query", "text_excerpt"]
         )
-        docs = self.get_documents()
-        combined_text = "\n\n".join(docs)
+        docs = self.get_documents(query, k=10)
+        combined_text = "\n\n".join([doc.page_content for doc in docs])
         prompt_value = prompt.format(query=query, text_excerpt=combined_text)
         
         # Try different models in case of rate limits
