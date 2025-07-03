@@ -49,6 +49,8 @@ document/
 *.pdf
 *.docx
 *.txt
+chroma_db/
+app/chroma_db/
 
 # Environment variables
 .env
