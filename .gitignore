@@ -46,6 +46,7 @@ Thumbs.db
 schema.png
 documents/
 document/
+Document/
 *.pdf
 *.docx
 *.txt
