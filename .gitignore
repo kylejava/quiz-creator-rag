@@ -49,7 +49,6 @@ document/
 Document/
 *.pdf
 *.docx
-*.txt
 chroma_db/
 app/chroma_db/
 
