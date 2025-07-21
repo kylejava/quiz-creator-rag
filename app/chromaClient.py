@@ -26,7 +26,7 @@ class ChromaClient:
             )
             print("Collection already exists")
         else:
-            documents = load_pdf_file("../document/diary-of-a-wimpy-kid-book-1-kinney-jeff.pdf")
+            documents = load_pdf_file("../document/book.pdf")
             chunks = split_text(documents)
             
             docs_for_chroma = [Document(page_content=chunk, metadata={"source": "pdf"}) for chunk in chunks]

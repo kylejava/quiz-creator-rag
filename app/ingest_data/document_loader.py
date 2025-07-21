@@ -3,7 +3,7 @@ from pprint import pprint
 import os
 import sys
 
-pdf_file_path = "../../document/diary-of-a-wimpy-kid-book-1-kinney-jeff.pdf"
+pdf_file_path = "../../document/book.pdf"
 
 def load_pdf_file(pdf_file_path):
     loader_py = PyMuPDFLoader(pdf_file_path)
